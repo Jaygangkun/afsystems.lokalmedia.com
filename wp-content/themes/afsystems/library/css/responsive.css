@@ -1,0 +1,143 @@
+/* #Media Queries
+================================================== */
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+	.services-excerpt .bottom-img {
+		right: -250px;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+	.banner-inner {
+		padding: 75px 0;
+	}
+	
+	.navbar {
+		text-align: center;
+	}
+	
+	.navbar-nav {
+		position: static;
+		transform: none;
+		padding-top: 15px !important;
+	}
+	
+	.navbar ul li {
+		display: block;
+	}
+	
+	.navbar-nav .nav-item {
+		margin: 5px 0;
+	}
+	
+	.navbar .menu-item.contact a {
+		display: block;
+		margin: 5px 0 10px;
+	}
+	
+	h2.fancy {
+		max-width: 100%;
+	}
+	
+	.service-preview {
+		padding: 75px 0;
+	}
+	
+	.service-preview p {
+		margin: 35px 0;
+	}
+	
+	.service-preview img {
+		margin-top: 50px;
+	}
+	
+	.services-excerpt .bottom-img {
+		right: -350px;
+	}
+	
+	footer {
+		text-align: center;
+		padding: 50px 0;
+	}
+	
+	.footer-title {
+		margin-top: 25px;
+	}
+	
+	.company .service-icon {
+		margin-top: 50px;
+	}
+	
+	.company span {
+		margin-top: 15px;
+	}
+	
+	.mission-statement {
+		padding: 75px 0;
+	}
+	
+	.values .image {
+		min-height: 350px;
+	}
+	
+	.values .content {
+		padding: 50px 15px;
+	}
+	
+	h2.fancy {
+		font-size: 42px;
+	}
+	
+	.service-footer h2 {
+		margin-bottom: 30px;
+	}
+	
+	.service-footer p {
+		margin-bottom: 30px;
+	}
+	
+	.product {
+		margin: 15px 0;
+	}
+	
+	.products-top .ellipse {
+		bottom: -240px;
+	}
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	.banner-inner h2 {
+		font-size: 18px;
+	}
+	
+	.banner-inner img {
+		max-width: 65%;
+		top: -25px;
+	}
+	
+	.services-excerpt {
+		padding: 75px 0;
+	}
+	
+	.services-excerpt .bottom-img {
+		display: none;
+	}
+	
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 576px) {
+	
+	.service-info li {
+		width: 100%;
+	}
+	
+}
