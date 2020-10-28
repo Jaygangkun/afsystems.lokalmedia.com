@@ -1258,3 +1258,43 @@ footer li a {
 	color: #6A798C !important;
 	text-decoration: none !important;
 }
+
+.category-filter-link{
+	color: #6A798C;
+	background: #E2E2E2;
+	padding: 10px 35px;
+	min-width: 140px;
+	text-align: center;
+	border-radius: 55px;
+	font-weight: 600;
+	display: inline-block;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	text-decoration: none !important;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
+	cursor: pointer;
+}
+
+.category-filter-link.active,
+.category-filter-link:hover{
+	color: #ffffff;
+    background: #E65B5B;
+    box-shadow: 0px 5px 15px rgba(250, 98, 98, 0.4);
+}
+
+.grid-item{
+	/* float: left;
+	position: relative !important;
+    display: inline-block;
+    left: initial !important;
+	border: 1px solid red;
+	top: 0px !important; */
+}
+
+.grid{
+	/* height: auto !important; */
+}

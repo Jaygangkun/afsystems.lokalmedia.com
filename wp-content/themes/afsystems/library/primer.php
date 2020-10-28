@@ -120,7 +120,10 @@ function primer_scripts_and_styles() {
     
     // fancybox js
     wp_register_script( 'fancybox-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.fancybox.min.js', array(), '', false );
-    
+	
+	// isotope js
+	wp_register_script( 'isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array(), '', false );
+	
     // animate on scroll js
     wp_register_script( 'aos-js', get_stylesheet_directory_uri() . '/library/js/libs/aos.js', array(), '', false );
 
@@ -156,7 +159,8 @@ function primer_scripts_and_styles() {
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'primer-modernizr' );
-    wp_enqueue_script( 'fancybox-js' );
+	wp_enqueue_script( 'fancybox-js' );
+	wp_enqueue_script( 'isotope-js' );
     wp_enqueue_script( 'aos-js' );
     wp_enqueue_script( 'primer-js' );
 
