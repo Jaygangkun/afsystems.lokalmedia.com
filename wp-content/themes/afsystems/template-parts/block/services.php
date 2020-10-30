@@ -7,7 +7,7 @@
 <section class="service-preview">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 order-lg-2">
+			<div class="col-lg-6 order-lg-2 px-4">
 				<h2 class="fancy" data-aos="fade-left"><?php the_sub_field('title'); ?></h2>
 				<p data-aos="fade-left" data-aos-delay="400"><?php the_sub_field('info'); ?></p>
 				<?php $link = get_sub_field('button'); if( $link ): ?>
@@ -15,7 +15,7 @@
 				<?php endif; $link = NULL; ?>
 			</div><!-- end .col-lg-6 -->
 			
-			<div class="col-lg-6 order-lg-1">
+			<div class="col-lg-6 order-lg-1 px-4">
 				<img class="img-fluid" src="<?php the_sub_field('image'); ?>" data-aos="fade-in" data-aos-delay="400">
 			</div><!-- end .col-lg-6 -->
 		</div><!-- end .row -->
@@ -27,7 +27,7 @@
 <section class="service-preview blue">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-6 px-4">
 				<h2 class="fancy" data-aos="fade-left"><?php the_sub_field('title'); ?></h2>
 				<p data-aos="fade-left" data-aos-delay="400"><?php the_sub_field('info'); ?></p>
 				<?php $link = get_sub_field('button'); if( $link ): ?>
@@ -35,7 +35,7 @@
 				<?php endif; $link = NULL; ?>
 			</div><!-- end .col-lg-6 -->
 			
-			<div class="col-lg-6">
+			<div class="col-lg-6 px-4">
 				<img class="img-fluid" src="<?php the_sub_field('image'); ?>" data-aos="fade-in" data-aos-delay="400">
 			</div><!-- end .col-lg-6 -->
 		</div><!-- end .row -->

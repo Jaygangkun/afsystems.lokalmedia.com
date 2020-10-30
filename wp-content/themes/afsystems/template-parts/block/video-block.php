@@ -4,7 +4,7 @@
 	$videoThumb = $videoImage['sizes'][ 'primer-1400' ]; endif;
 ?>
 
-<section class="video-block" style="background-image: linear-gradient(90deg, rgba(0, 98, 155, 0.3), rgba(0, 98, 155, 0.3)), url(<?= $videoThumb; ?>)">
+<section class="video-block" style="background-image: linear-gradient(90deg, rgba(0, 98, 155, 0.8), rgba(0, 98, 155, 0.8)), url(<?= $videoThumb; ?>)">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 mx-auto text-center">

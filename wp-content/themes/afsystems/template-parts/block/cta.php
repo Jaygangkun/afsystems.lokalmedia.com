@@ -7,11 +7,11 @@
 <section class="cta" style="background-image: url(<?= $backgroundThumb; ?>)">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-5 text-center mx-auto">
-				<h2 data-aos="fade-in"><?php the_field('title'); ?></h2>
-				<p data-aos="fade-in" data-aos-delay="300"><?php the_field('subtitle'); ?></p>
+			<div class="col-lg-5 text-center mx-auto" data-aos="fade-up">
+				<h2><?php the_field('title'); ?></h2>
+				<p><?php the_field('subtitle'); ?></p>
 				<?php $link = get_field('button'); if( $link ): ?>
-					<a class="btn btn-primary" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" data-aos="fade-in" data-aos-delay="600"><?php echo $link['title']; ?></a>
+					<a class="btn btn-primary" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
 				<?php endif; $link = NULL; ?>
 			</div><!-- end .col-lg-4 -->
 		</div><!-- end .row -->

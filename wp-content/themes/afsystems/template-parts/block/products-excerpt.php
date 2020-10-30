@@ -12,7 +12,7 @@
 			</div><!-- end .col-lg-6 -->
 			
 			<div class="col-lg-6">
-				<img class="bottom-img img-fluid" src="<?php the_field('image'); ?>" data-aos="slide-up" data-aos-offset="500" data-aos-duration="1000">
+				<img class="products-img img-fluid" src="<?php the_field('image'); ?>" data-aos="slide-up" data-aos-offset="300" data-aos-duration="1000">
 			</div><!-- end .col-lg-6 -->
 		</div><!-- end .row -->
 		

@@ -109,6 +109,27 @@
 		bottom: -240px;
 	}
 	
+	.contact-form {
+		margin-top: 50px;
+	}
+	
+	.contact-form .gform_confirmation_message {
+		margin-bottom: 100px;
+	}
+	
+	.locations .bottom-img {
+		display: none;
+	}
+	
+	.navbar-nav .nav-item:not(:last-of-type):after {
+		display: none;
+	}
+	
+	.light-overlay {
+		background: #ffffff;
+		opacity: .75;
+	}
+	
 }
 
 /* Small Devices, Tablets */
@@ -127,7 +148,7 @@
 		padding: 75px 0;
 	}
 	
-	.services-excerpt .bottom-img {
+	.bottom-img {
 		display: none;
 	}
 	

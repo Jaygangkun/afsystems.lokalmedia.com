@@ -22,7 +22,7 @@
 				</div><!-- end .col-lg-4 -->
 				<div class="col-lg-4">
 					<span class="footer-title">Contact Us</span>
-					<?php the_field('footer_contact_info', 'option') ?>
+					<?php the_field('company_contact_info', 'option') ?>
 				</div><!-- end .col-lg-4 -->
 			</div><!-- end .row -->
 		</div><!-- end .col-lg-7 -->

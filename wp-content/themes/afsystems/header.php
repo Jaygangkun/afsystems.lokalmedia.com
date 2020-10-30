@@ -48,7 +48,7 @@
 	<body <?php body_class(); ?>>
   	
   	<nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
+        <div class="container-fluid">
           
         	<?php if ( get_field('nav_logo', 'option') ) : ?>
 				<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php the_field('nav_logo', 'option') ?>" class="img-fluid"></a>

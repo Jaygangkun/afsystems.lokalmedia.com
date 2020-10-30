@@ -18,7 +18,7 @@
 			</div><!-- end .col-lg-9 -->
 		</div><!-- end .row -->
 		
-		<div class="row justify-content-center align-items-center">
+		<div class="row justify-content-center">
 			
 			<?php if( have_rows('services') ): while ( have_rows('services') ) : the_row(); ?>
 			

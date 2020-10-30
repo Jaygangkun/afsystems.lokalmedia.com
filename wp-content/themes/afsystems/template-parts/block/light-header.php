@@ -4,7 +4,7 @@
 	$backgroundThumb = $backgroundImage['sizes'][ 'primer-1400' ]; endif;
 ?>
 
-<section class="light-header" style="background-image: linear-gradient(90deg, #F7F9FA 35.36%, rgba(248, 250, 251, 0) 97.57%), url(<?= $backgroundThumb; ?>)">
+<section class="light-header" style="background-image: url(<?= $backgroundThumb; ?>)">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
@@ -13,4 +13,6 @@
 			</div><!-- end .col-lg-6 -->
 		</div><!-- end .row -->
 	</div><!-- end .container -->
+	
+	<div class="light-overlay"></div>
 </section>
