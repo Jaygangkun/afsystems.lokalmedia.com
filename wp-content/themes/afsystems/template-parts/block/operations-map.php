@@ -16,8 +16,7 @@
 		</div><!-- end .container -->
 	</div><!-- end .operations-top -->
 	
-	<img data-aos="fade-in" src="<?= $backgroundThumb; ?>" class="img-fluid">
-	<div class="map-container">
+	<div class="map-container" data-aos="fade-in">
 		<div class="map-wrap" id="map">
 		</div>
 	</div>
@@ -26,14 +25,14 @@
 	?>
 	<?php if( have_rows('locations') ): while ( have_rows('locations') ) : the_row(); ?>
 		<?php
-		$address = get_field('address');
+		$address = get_sub_field('address');
 		$locations[] = $address;
 		?>
 	<?php endwhile; endif; ?>
 	<script>
 		var geocoder;
 		var map;
-		var locations = JSON.parse("<?php echo json_encode($locations)?>");
+		var locations = JSON.parse('<?php echo json_encode($locations)?>');
 		var geoLocations = [];
 
 		function codeAddress() {
@@ -54,25 +53,142 @@
 		function convertLatLong(index){
 			if(index < locations.length){
 				geocoder.geocode( { 'address': locations[index]}, function(results, status) {
-				if (status == 'OK') {
-					console.log(results);
-					// map.setCenter(results[0].geometry.location);
-					// var marker = new google.maps.Marker({
-					// 	map: map,
-					// 	position: results[0].geometry.location
-					// });
-				} else {
-					alert('Geocode was not successful for the following reason: ' + status);
-				}
-			});
+					if (status == 'OK') {
+						geoLocations.push({
+							lat: results[0].geometry.location.lat(),
+							lng: results[0].geometry.location.lng()
+						})
+						index ++;
+						// map.setCenter(results[0].geometry.location);
+						// var marker = new google.maps.Marker({
+						// 	map: map,
+						// 	position: results[0].geometry.location
+						// });
+						convertLatLong(index);
+					} else {
+						alert('Geocode was not successful for the following reason: ' + status);
+					}
+				});
+			}
+			else{
+				addMarkers();
 			}
 		}
+
+		function addMarkers(){
+			var bounds = new google.maps.LatLngBounds();
+			for(var index = 0; index < geoLocations.length; index++){
+				var point = new google.maps.LatLng(geoLocations[index].lat, geoLocations[index].lng);
+				var marker = new google.maps.Marker({
+					map: map,
+					position: point,
+					icon: '<?php echo get_template_directory_uri()?>/library/images/icon-map-pin.svg'
+				});
+
+				bounds.extend(marker.position);
+			}
+
+			map.fitBounds(bounds);
+		}
+
+		var silver = [
+			{
+				elementType: "geometry",
+				stylers: [{ color: "#f5f5f5" }],
+			},
+			{
+				elementType: "labels.icon",
+				stylers: [{ visibility: "off" }],
+			},
+			{
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#616161" }],
+			},
+			{
+				elementType: "labels.text.stroke",
+				stylers: [{ color: "#f5f5f5" }],
+			},
+			{
+				featureType: "administrative.land_parcel",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#bdbdbd" }],
+			},
+			{
+				featureType: "poi",
+				elementType: "geometry",
+				stylers: [{ color: "#eeeeee" }],
+			},
+			{
+				featureType: "poi",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#757575" }],
+			},
+			{
+				featureType: "poi.park",
+				elementType: "geometry",
+				stylers: [{ color: "#e5e5e5" }],
+			},
+			{
+				featureType: "poi.park",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#9e9e9e" }],
+			},
+			{
+				featureType: "road",
+				elementType: "geometry",
+				stylers: [{ color: "#ffffff" }],
+			},
+			{
+				featureType: "road.arterial",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#757575" }],
+			},
+			{
+				featureType: "road.highway",
+				elementType: "geometry",
+				stylers: [{ color: "#dadada" }],
+			},
+			{
+				featureType: "road.highway",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#616161" }],
+			},
+			{
+				featureType: "road.local",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#9e9e9e" }],
+			},
+			{
+				featureType: "transit.line",
+				elementType: "geometry",
+				stylers: [{ color: "#e5e5e5" }],
+			},
+			{
+				featureType: "transit.station",
+				elementType: "geometry",
+				stylers: [{ color: "#eeeeee" }],
+			},
+			{
+				featureType: "water",
+				elementType: "geometry",
+				stylers: [{ color: "#c9c9c9" }],
+			},
+			{
+				featureType: "water",
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#9e9e9e" }],
+			},
+		];
+		
 		function initMap() {
 			geocoder = new google.maps.Geocoder();
 			map = new google.maps.Map(document.getElementById('map'), {
-				center: new google.maps.LatLng(-33.863276, 151.207977),
-				zoom: 12
+				// center: new google.maps.LatLng(-33.863276, 151.207977),
+				zoom: 12,
+				mapTypeControl: false
 			});
+
+			map.setOptions({ styles: silver });
 
 			convertLatLong(0);
         	
